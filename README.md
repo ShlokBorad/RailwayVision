@@ -1,6 +1,6 @@
 <div align="center">
 
-![RailwayVision Banner](.github/assets/banner.png)
+![RailwayVision Banner](/banner.png)
 
 # 🚂 RailwayVision
 
