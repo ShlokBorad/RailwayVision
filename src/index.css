@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #050816;
+    --card-bg: rgba(13, 19, 36, 0.75);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --accent-cyan: #00E5FF;
+    --accent-purple: #7C3AED;
+    --status-success: #10B981;
+    --status-warning: #F59E0B;
+    --status-danger: #EF4444;
+  }
+
+  html, body {
+    background-color: var(--bg-main);
+    color: #F8FAFC;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  input, textarea {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+/* Futuristic Cyber Grid Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom Glassmorphism Utility */
+.glass-panel {
+  background: rgba(18, 15, 23, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(192, 132, 252, 0.45);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25), 0 12px 48px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Specular Button Light Effect (from 0xPrince template) */
+.specular-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.specular-btn:active {
+  transform: scale(0.96);
+}
+
+/* Conic Border Card Highlight */
+.conic-card {
+  position: relative;
+}
+.conic-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, transparent 40%, rgba(124, 58, 237, 0.5), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+.conic-card:hover::before {
+  opacity: 1;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.35);
+}
+
+/* Aurora Gradient Animations */
+@keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aurora {
+  background: linear-gradient(-45deg, #0A0A0C, #120F17, #1c0a35, #081726);
+  background-size: 400% 400%;
+  animation: aurora-flow 22s ease infinite;
+}
+
+/* Pulse Glow Keyframe */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 6s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 132, 252, 0.6);
+}
+
+/* Leaflet Dark Customizations */
+.leaflet-container {
+  background: #0A0A0C !important;
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: rgba(18, 15, 23, 0.95) !important;
+  color: #fff !important;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  backdrop-filter: blur(16px);
+  border-radius: 14px !important;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.3) !important;
+}
+.leaflet-popup-tip {
+  background: rgba(18, 15, 23, 0.95) !important;
+}
